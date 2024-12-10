@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>WebPage Title </title>
+    </head>
+    <style>
+		#content {
+			position: fixed;
+			top: 30px;
+			left: 1000px;
+			font-family: Consolas;
+			font-size: 20px;
+		}
+	</style>
+    <body onload="main()">
+        <canvas id="webgl" width = "800" height = "800">
+            Please use a browser that support "canvas"
+        </canvas>
+        <script src="cuon-matrix.js"></script>
+        <script src="WebGL.js"></script>
+        <div class="slidecontainer1">
+            Zoom:<input type="range" min="5" max="100" value="50" class="slider" id="Zoom">
+        </div>
+        <select name="menu" id="menu">
+			<option value="normal">Normal</option>
+			<option value="depth">Depth</option>
+		</select>
+        <div id="content">
+            <h3> Control </h3>
+            <h3> (W)(A)(S)(D) robot move </h3>
+            <h3> (R)(T)(Y) rotate robot (Q)(E) rotate object </h3>
+            <h3> (Slider) Zoom in/Zoom out </h3>
+            <h3> (Button) Normal mode/Depth mode</h3>
+            <h3> (G) Grab </h3>
+        </div>
+        
+    </body>
+</html>
+

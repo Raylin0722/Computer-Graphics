@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>WebPage Title </title>
+    </head>
+    <style>
+        .canvas{
+            position: relative;
+            z-index: 1;
+        }
+        .score{
+            position: absolute; /* Position the score element absolutely */
+            top: 10px; /* Set the top position to 50% */
+            left: 400px; /* Set the left position to 50% */
+            transform: translate(-50%, -50%); /* Center the element using transform */
+            z-index: 2; /* Ensure the score is above other elements */
+            color: #FFFFFF;
+            font-family: cursive;
+        }
+        .life{
+            position: absolute; /* Position the life element absolutely */
+            top: 10px; /* Set the top position to 50% */
+            left: 100px; /* Set the left position to 50% */
+            transform: translate(-50%, -50%); /* Center the element using transform */
+            z-index: 2; /* Ensure the life is above other elements */
+            color: #FFFFFF;
+            font-family: cursive;
+        }
+        .end{
+            position: absolute;
+            visibility: hidden;
+            color: #FFFFFF;
+            left: 400px;
+            top: 300px;
+            z-index: 3;
+            transform: translate(-50%, -50%);
+            font-size: 80px;
+            font-family: cursive;
+            text-align: center;
+        }
+        .level{
+            position: absolute; /* Position the life element absolutely */
+            top: 10px; /* Set the top position to 50% */
+            left: 700px; /* Set the left position to 50% */
+            transform: translate(-50%, -50%); /* Center the element using transform */
+            z-index: 2; /* Ensure the life is above other elements */
+            color: #FFFFFF;
+            font-family: cursive;
+        }
+        .control{
+            position: absolute;
+            color: black;
+            font-size: 20px;
+            left: 60%;
+            top: 10px;
+        }
+        .play{
+            position: absolute;
+            color: black;
+            font-size: 20px;
+            left: 60%;
+            top: 270px;
+        }
+        .color{
+            position: absolute;
+            color: black;
+            font-size: 20px;
+            left: 60%;
+            top: 510px;
+
+        }
+        th, td {
+            text-align: center; /* Center text in table cells */
+            padding: 10px; /* Add some padding for spacing */
+        }
+        
+    </style>
+
+    <body onload="main()" style="background-color: rgba(128, 128, 128, 0.5);">
+        <canvas id="webgl" width = "800" height = "800" class="canvas">
+            Please use a browser that support "canvas"
+        </canvas> 
+        <h1 id="score" class="score">SCORE: 0</h3>
+        <h1 id="life" class="life">LIFE: 3</h3>
+        <h1 id="end" class="end">GANE OVER <br> PRESS 0 REPLAY</h1>
+        <h1 id="level" class="level">LEVEL: 1</h1>
+        <script src="cuon-matrix.js"></script>
+        <script src="GameObj.js"></script>
+        <script src="WebGL.js"></script>
+
+        <div class="control">
+            <h3>Control</h2>
+            <p>(mouse) rotate player</p>
+            <p>(w) move forward</p>
+            <p>(s) move backward</p>
+            <p>(v) change view</p>
+        </div>
+
+        <div class="play">
+            <h3>How to play?</h3>
+            <p>According to color of sphere, click corresponding key</p>
+            <p>Get higher score as you can</p>
+            <p>Be careful touching sphere will get hurt and minus life</p>
+            <p>Game over when life equal to zero</p>
+        </div>
+
+        <div class="color">
+            <h3>key</h3>
+            <table>
+                <tr>
+                  <th>Color</th>
+                  <th>Key</th>
+                  <th>Color</th>
+                  <th>Key</th>
+                </tr>
+                <tr>
+                  <td><span style="color: red;">RED</span></td>
+                  <td>R / r</td>
+                  <td><span style="color: yellow;">YELLOW</span></td>
+                  <td>Y / y</td>
+                </tr>
+                <tr>
+                  <td><span style="color: green;">GREEN</span></td>
+                  <td>G / g</td>
+                  <td><span style="color: purple;">PURPLE</span></td>
+                  <td>P / p</td>
+                </tr>
+                <tr>
+                    <td><span style="color: blue;">BLUE</span></td>
+                    <td>B / b</td>
+                    <td><span style="color: cyan;">CYAN</span></td>
+                    <td>C / c</td>
+                  </tr>
+              </table>
+        </div>
+        
+        
+    </body>
+</html>
+
+
